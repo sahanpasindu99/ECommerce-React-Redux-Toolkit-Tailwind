@@ -57,7 +57,7 @@ const ChoicePage = () => {
         </div>
 
         {/* Carousel */}
-        <div className="relative">
+        <div className="relative max-w-6xl">
           {/* Scroll Buttons */}
           <button
             onClick={scrollLeft}
