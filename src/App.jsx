@@ -10,6 +10,7 @@ import Cart from './components/Cart'
 import Hero from './components/Hero'
 import Featured from './components/Featured'
 import Footer from './components/Footer'
+import Wishlist from './pages/Wishlist'
 // import './App.css'
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/cart' element={<Cart/>}/>
+      <Route path='/wishlist' element={<Wishlist/>}/>
     </Routes>
     <Footer/>
     

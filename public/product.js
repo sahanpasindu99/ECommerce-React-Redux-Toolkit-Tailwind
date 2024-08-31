@@ -8,7 +8,7 @@ export const product=
   
   {
     "id": 1,
-    "name": "Product 1",
+    "name": "JBL Headphone 8D",
     "image": jbl,
     "qty": 10,
     "price": 19.99,
@@ -18,7 +18,7 @@ export const product=
   },
   {
     "id": 2,
-    "name": "Product 2",
+    "name": "Iphone 15 Pro Max",
     "image": phone,
     "qty": 15,
     "price": 29.99,
@@ -28,7 +28,7 @@ export const product=
   },
   {
     "id": 3,
-    "name": "Product 3",
+    "name": "Gucci Bag Genuine",
     "image": gucci,
     "qty": 20,
     "price": 39.99,
@@ -38,7 +38,7 @@ export const product=
   },
   {
     "id": 4,
-    "name": "Product 4",
+    "name": "Nike Pegasus",
     "image": nike,
     "qty": 8,
     "price": 49.99,
@@ -48,7 +48,7 @@ export const product=
   },
   {
     "id": 5,
-    "name": "Product 5",
+    "name": "Iphone 15",
     "image": phone,
     "qty": 12,
     "price": 59.99,
@@ -58,7 +58,7 @@ export const product=
   },
   {
     "id": 6,
-    "name": "Product 6",
+    "name": "JBL 2",
     "image": jbl,
     "qty": 25,
     "price": 69.99,
@@ -68,7 +68,7 @@ export const product=
   },
   {
     "id": 7,
-    "name": "Product 7",
+    "name": "Handbag 12L",
     "image": gucci,
     "qty": 30,
     "price": 79.99,
@@ -78,11 +78,11 @@ export const product=
   },
   {
     "id": 8,
-    "name": "Product 8",
+    "name": "Nike Pegasus 16",
     "image": nike,
     "qty": 18,
     "price": 89.99,
-    "type": "Toys",
+    "type": "Footwear",
     "rating": 4.6,
     "sold": 160
   },

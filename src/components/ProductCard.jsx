@@ -3,7 +3,10 @@ import { FiHeart, FiShoppingCart } from 'react-icons/fi';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalfAlt, faFire } from '@fortawesome/free-solid-svg-icons'; // Import FontAwesome icons
 import { addToCart } from '../store/cartSlice';
+import { addToWishlist } from '../store/wishlistSlice';
 import { useDispatch } from 'react-redux';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Products = ({ product }) => {
   let rating = product.rating;
@@ -16,12 +19,17 @@ const Products = ({ product }) => {
     dispatch(addToCart(product));
   };
 
+  const handleAddToWishlist=()=>{
+     dispatch(addToWishlist(product));
+  };
+
   return (
     <div
       className={`relative w-[230px] p-4 rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl ${
         product.id === 1 ? 'bg-gradient-to-tl from-[#fade63] to-[#fcecc2e7]' : 'bg-white'
       }`}
     >
+      <ToastContainer/>
       {/* Most Popular Ribbon */}
       {product.id === 1 && (
         <div className="absolute flex items-center justify-center w-64 h-10 px-2 py-1 text-sm font-semibold text-white transform -rotate-45 -translate-x-1/2 -translate-y-1/2 bg-red-500 shadow-sm top-12 left-12">
@@ -32,7 +40,7 @@ const Products = ({ product }) => {
 
       {/* Favorite Button */}
       <div className="absolute top-3 right-3">
-        <button className="p-2 bg-white rounded-full shadow-md hover:bg-gray-200">
+        <button   onClick={handleAddToWishlist} className="p-2 bg-white rounded-full shadow-md hover:bg-gray-200">
           <FiHeart className="text-xl" />
         </button>
       </div>

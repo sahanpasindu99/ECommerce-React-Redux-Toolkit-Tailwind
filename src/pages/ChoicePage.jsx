@@ -8,6 +8,8 @@ import { useEffect } from 'react';
 import StatusCode from '../utils/Status';
 import { getProducts } from '../store/productSlice';
 
+
+
 const ChoicePage = () => {
   const carouselRef = useRef(null);
   const dispatch=useDispatch();
