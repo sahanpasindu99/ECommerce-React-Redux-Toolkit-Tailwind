@@ -32,7 +32,7 @@ export const product=
     "image": gucci,
     "qty": 20,
     "price": 39.99,
-    "type": "Home Appliances",
+    "type": "Wearing",
     "rating": 4.5,
     "sold": 120
   },
@@ -42,7 +42,7 @@ export const product=
     "image": nike,
     "qty": 8,
     "price": 49.99,
-    "type": "Kitchenware",
+    "type": "Wearing",
     "rating": 4.7,
     "sold": 300
   },
@@ -52,7 +52,7 @@ export const product=
     "image": phone,
     "qty": 12,
     "price": 59.99,
-    "type": "Furniture",
+    "type": "Electronics",
     "rating": 4.3,
     "sold": 230
   },
@@ -72,7 +72,7 @@ export const product=
     "image": gucci,
     "qty": 30,
     "price": 79.99,
-    "type": "Footwear",
+    "type": "Wearing",
     "rating": 3.9,
     "sold": 215
   },
@@ -92,7 +92,7 @@ export const product=
     "image": phone,
     "qty": 5,
     "price": 99.99,
-    "type": "Books",
+    "type": "Electronics",
     "rating": 4.0,
     "sold": 100
   },

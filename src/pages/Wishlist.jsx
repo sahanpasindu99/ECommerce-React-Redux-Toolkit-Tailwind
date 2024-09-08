@@ -21,6 +21,7 @@ const Wishlist = () => {
 
   return (
     <div className="flex justify-center min-h-full mb-8">
+    
       <div className="w-full max-w-6xl p-4 mx-auto mt-8">
         <div className="flex items-center justify-between mb-4">
           <h1 className="text-2xl font-semibold">My Wishlist ({wishlist.length})</h1>
