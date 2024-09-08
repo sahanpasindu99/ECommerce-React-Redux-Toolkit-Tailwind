@@ -104,6 +104,7 @@ const Hero = () => {
 
           {/* Girl Image */}
           <img
+          draggable="false"
             src={girl}
             alt="Girl"
             className="absolute right-[-6rem] md:right-[-4rem] bottom-0 w-auto h-[90%] sm:h-[95%] md:h-[105%] object-contain z-[5]"

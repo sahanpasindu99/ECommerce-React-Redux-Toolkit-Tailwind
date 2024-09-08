@@ -18,11 +18,15 @@ const ChoicePage = () => {
       <div className='container mx-auto'>
       <div className="flex flex-col items-start justify-between w-full px-4 mx-auto mb-8 overflow-hidden sm:flex-row sm:items-center">
           {/* <h2 className="mx-2 text-2xl font-semibold">Big Save</h2> */}
-       <div className='mb-4'>
+       <div className='mb-2'>
        <img src={choice} className='h-[40px] w-auto '/>
 <h2 className='text-lg font-bold text-red-500'> Save more than 70% with free shipping</h2>
        </div>
-          <button className="mt-2 text-black hover:underline sm:mt-0">View more</button>
+        <div className='flex flex-row items-center justify-center'>
+        <button className="mt-2 text-black hover:underline sm:mt-0">View more</button>
+          <span className="block pt-1 ml-2 text-lg text-black sm:hidden">→</span> 
+       
+        </div>
         </div>
         <div className='w-full pl-4 overflow-hidden'>
             <NewItemsSlider products={data.slice(4, 10)} />

@@ -16,6 +16,9 @@ const wishlistSlice = createSlice({
       if (!exists) {
         state.wishlist.push({ ...newItem, selected: false });
         toast.success("Item added to wishlist!"
+          ,{
+            position:"bottom-left",
+        },
         //   ,{
         //   position: "bottom-left",
         //   autoClose: 3000,
@@ -29,7 +32,11 @@ const wishlistSlice = createSlice({
         // }
       );      
       } else {
-        toast.info("Item is already in your wishlist.");
+        toast.info("Item is already in your wishlist."
+          ,{
+            position:"bottom-left",
+        },
+        );
       }
       // Update localStorage
       localStorage.setItem("wishlistItems", JSON.stringify(state.wishlist));
@@ -53,13 +60,21 @@ const wishlistSlice = createSlice({
     removeItems(state) {
       const removedCount = state.wishlist.filter((item) => item.selected).length;
       state.wishlist = state.wishlist.filter((item) => !item.selected);
-      toast.success(`${removedCount} items removed from wishlist.`);
+      toast.success(`${removedCount} item(s) removed from wishlist.`
+        ,{
+          position:"bottom-left",
+      },
+      );
       localStorage.setItem("wishlistItems", JSON.stringify(state.wishlist));
     },
 
     removeItem(state, action) {
       state.wishlist = state.wishlist.filter((item) => item.id !== action.payload);
-      toast.success("Item removed from wishlist.");
+      // toast.success("Item removed from wishlist."
+      //   ,{
+      //     position:"bottom-left",
+      // },
+      // );
       localStorage.setItem("wishlistItems", JSON.stringify(state.wishlist));
     },
 
@@ -67,7 +82,7 @@ const wishlistSlice = createSlice({
       state.wishlist.forEach((item) => {
         item.selected = false;
       });
-      toast.info("Selection cleared.");
+      // toast.info("Selection cleared.");
       localStorage.setItem("wishlistItems", JSON.stringify(state.wishlist));
     },
   },

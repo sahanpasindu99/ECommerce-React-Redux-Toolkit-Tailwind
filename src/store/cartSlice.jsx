@@ -21,15 +21,19 @@ const cartSlice = createSlice({
         // Item exists in the cart, increase its quantity
         state.cart[itemIndex].cartQuantity += 1;
         toast.info("Increased item quantity !"
-        //     ,{
-        //     position:"bottom-left",
-        // },
+            ,{
+            position:"bottom-left",
+        },
         );
       } else {
         // Item does not exist in the cart, add it
         const tempProduct = { ...action.payload, cartQuantity: 1 };
         state.cart.push(tempProduct);
-        toast.success("Item added to cart!");
+        toast.success("Item added to cart!"
+          ,{
+            position:"bottom-left",
+        },
+        );
       }
 
       localStorage.setItem("cartItems", JSON.stringify(state.cart));
@@ -39,7 +43,11 @@ const cartSlice = createSlice({
         (product) => product.id !== action.payload.id
       );
       localStorage.setItem("cartItems", JSON.stringify(state.cart));
-      toast.success("Item removed from cart!");
+      toast.success("Item removed from cart!"
+        ,{
+          position:"bottom-left",
+      },
+      );
     },
     decreaseCart: (state, action) => {
       const itemIndex = state.cart.findIndex(
@@ -49,13 +57,21 @@ const cartSlice = createSlice({
       if (state.cart[itemIndex].cartQuantity > 1) {
         // Decrease the quantity if it's greater than 1
         state.cart[itemIndex].cartQuantity -= 1;
-        toast.info("Decreased item quantity in the cart.");
+        toast.info("Decreased item quantity in the cart."
+          ,{
+            position:"bottom-left",
+        },
+        );
       } else if (state.cart[itemIndex].cartQuantity === 1) {
         // Remove item if the quantity is 1
         state.cart = state.cart.filter(
           (item) => item.id !== action.payload.id
         );
-        toast.success("Item removed from cart.");
+        toast.success("Item removed from cart."
+          ,{
+            position:"bottom-left",
+        },
+        );
       }
 
       localStorage.setItem("cartItems", JSON.stringify(state.cart));
@@ -63,7 +79,11 @@ const cartSlice = createSlice({
     clearCart: (state) => {
       state.cart = [];
       localStorage.setItem("cartItems", JSON.stringify(state.cart));
-      toast.success("Cart cleared!");
+      toast.success("Cart cleared!"
+        ,{
+          position:"bottom-left",
+      },
+      );
     },
     getTotal: (state) => {
       let { totalAmount, totalQuantity } = state.cart.reduce(

@@ -29,7 +29,7 @@ const Products = ({ product }) => {
         product.id === 1 ? 'bg-gradient-to-tl from-[#fade63] to-[#fcecc2e7]' : 'bg-white'
       }`}
     >
-      <ToastContainer/>
+ 
       {/* Most Popular Ribbon */}
       {product.id === 1 && (
         <div className="absolute flex items-center justify-center w-64 h-10 px-2 py-1 text-sm font-semibold text-white transform -rotate-45 -translate-x-1/2 -translate-y-1/2 bg-red-500 shadow-sm top-12 left-12">
@@ -46,7 +46,7 @@ const Products = ({ product }) => {
       </div>
 
       {/* Product Image */}
-      <img src={product.image} alt="Product" className="w-full h-[148px] object-contain mb-4" />
+      <img src={product.image} alt="Product" className="w-full h-[148px] object-contain mb-4"  draggable="false"/>
 
       {/* Product Info */}
       <div className="text-center">

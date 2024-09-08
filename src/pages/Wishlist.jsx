@@ -55,7 +55,8 @@ const Wishlist = () => {
                     checked={item.selected}
                     onChange={() => dispatch(toggleSelect(item.id))}
                   />
-                  <img src={item.image} alt={item.name} className="w-20 h-20 mx-4" />
+                  <img src={item.image} alt={item.name} className="w-20 h-20 mx-4" draggable={false}
+                  />
                   <div>
                     <h2 className="text-lg font-medium">{item.name}</h2>
                     <p>$ {item.price}</p>

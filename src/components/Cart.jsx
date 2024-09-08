@@ -42,6 +42,7 @@ const Cart = () => {
                       src={item.image}
                       alt={item.name}
                       className="object-cover w-20 h-20 rounded-lg sm:w-24 sm:h-24"
+                      draggable={false}
                     />
                     <div className="ml-4">
                       <h4 className="text-sm font-semibold sm:text-base lg:text-lg">{item.name}</h4>

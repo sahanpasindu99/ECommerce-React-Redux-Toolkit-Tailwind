@@ -11,6 +11,9 @@ import Hero from './components/Hero'
 import Featured from './components/Featured'
 import Footer from './components/Footer'
 import Wishlist from './pages/Wishlist'
+import ProductDetails from './pages/ProductDetails'
+import { ToastContainer, toast } from "react-toastify";
+
 // import './App.css'
 
 function App() {
@@ -19,11 +22,13 @@ function App() {
   return (
     <Provider store={store}>
     <BrowserRouter>
+    <ToastContainer/>
     <Navbar/>
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/cart' element={<Cart/>}/>
       <Route path='/wishlist' element={<Wishlist/>}/>
+      <Route path='/product' element={<ProductDetails/>}/>
     </Routes>
     <Footer/>
     
