@@ -23,7 +23,7 @@ export const Home = () => {
         {/* Heading and View All Button */}
         <div className="flex flex-col items-start justify-between max-w-6xl px-4 mx-auto sm:flex-row sm:items-center">
           <h2 className="mx-2 text-2xl font-semibold">Big Save</h2>
-          <button className="mt-2 text-black hover:underline sm:mt-0">View more</button>
+          <button className="pl-2 mt-2 text-black hover:underline sm:mt-0 md:pl-0">View more</button>
         </div>
 
         {/* Products Grid */}
