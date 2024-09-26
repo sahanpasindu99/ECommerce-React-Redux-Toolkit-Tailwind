@@ -13,7 +13,7 @@ const ChoicePage = () => {
   }, [dispatch]);
 
   return (
-    <section className='flex justify-center w-full h-auto max-w-6xl my-8'>
+    <section className='flex justify-center w-full h-auto max-w-6xl my-8 ' id='products'>
        
       <div className='container mx-auto'>
       <div className="flex flex-col items-start justify-between w-full px-4 mx-auto mb-8 overflow-hidden sm:flex-row sm:items-center">

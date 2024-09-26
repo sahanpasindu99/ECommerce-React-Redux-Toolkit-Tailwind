@@ -24,8 +24,8 @@ const Navbar = () => {
         {/* Middle - Navigation */}
         <div className="hidden space-x-8 md:flex">
           <a href="#" className="text-sm text-[#3b346b] font-semibold hover:text-[#141920]">Home</a>
-          <a href="#" className="text-sm text-[#3b346b] font-semibold hover:text-[#141920]">Catalog</a>
-          <a href="#" className="text-sm text-[#3b346b] font-semibold hover:text-[#141920]">Blog</a>
+          <a href="#products" className="text-sm text-[#3b346b] font-semibold hover:text-[#141920]">Products</a>
+          <a href="#" className="text-sm text-[#3b346b] font-semibold hover:text-[#141920]">Pricing</a>
           <a href="#" className="text-sm text-[#3b346b] font-semibold hover:text-[#141920]">Contact</a>
         </div>
 

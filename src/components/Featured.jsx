@@ -1,25 +1,74 @@
 import React from 'react';
-import { FiShoppingBag, FiStar, FiClock, FiHeadphones, FiBook, FiTag, FiUsers } from 'react-icons/fi';
+import { motion } from 'framer-motion';
+import { FiShoppingBag, FiStar, FiClock, FiHeadphones, FiTag, FiUsers } from 'react-icons/fi';
 
 const Featured = () => {
-  const categories = [
-    { icon: <FiShoppingBag size={40} />, title: 'Best Seller' },
-    { icon: <FiStar size={40} />, title: 'New Release' },
-    { icon: <FiClock size={40} />, title: 'Coming Soon' },
-    { icon: <FiHeadphones size={40} />, title: 'Music' },
-    { icon: <FiUsers size={40} />, title: 'Fashion' },
-    { icon: <FiTag size={40} />, title: 'Garden' }
+  const companies = [
+    {
+      id: 1,
+      name: "Balenciaga",
+      img: "/Brands/Balenciaga.png",
+      nameImg: "/appName.svg",
+    },
+    {
+      id: 2,
+      name: "Versace",
+      img: "/Brands/Versace.png",
+      nameImg: "/cloudName.svg",
+    },
+    {
+      id: 3,
+      name: "NIKE",
+      img: "/Brands/Nike.png",
+      nameImg: "/hostName.svg",
+    },
+    {
+      id: 4,
+      name: "Armani.",
+      img: "/Brands/Armani.png",
+      nameImg: "/dockerName.svg",
+    },
+    {
+      id: 5,
+      name: "Dior",
+      img: "/Brands/Dior.png",
+      nameImg: "/streamName.svg",
+    },
+    {
+      id: 6,
+      name: "Rolex",
+      img: "/Brands/Rolex.png",
+      nameImg: "/dockerName.svg",
+    },
   ];
 
+  const animationVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
-    <section className="flex justify-center w-full py-8 bg-white">
-      <div className="grid w-full max-w-6xl grid-cols-2 gap-4 px-4 md:grid-cols-3 lg:grid-cols-6">
-        {categories.map((category, index) => (
-          <div key={index} className="bg-[#4b2072] text-white rounded-lg flex flex-col items-center p-6 text-center hover:scale-105 transform transition-all duration-200">
-            <div className="mb-4 text-[#f398db]">{category.icon}</div>
-            <h3 className="mb-2 text-lg font-semibold">{category.title}</h3>
-            <p className="text-sm text-[#f398db]">More &gt;</p>
-          </div>
+    <section className="flex justify-center w-full pb-8 bg-white md:py-8">
+      <div className="flex flex-wrap items-center justify-center gap-4 md:gap-16 max-lg:mt-10">
+        {companies.map((company, index) => (
+          <React.Fragment key={company.id}>
+            <motion.div
+              className="flex gap-2 md:max-w-80 max-w-36"
+              initial="hidden"
+              animate="visible"
+              variants={animationVariants}
+              transition={{
+                duration: 1,
+                delay: index * 0.2, // Stagger the animation for each company
+              }}
+            >
+              <img
+                src={company.img}
+                alt={company.name}
+                className="w-12 md:w-28"
+              />
+            </motion.div>
+          </React.Fragment>
         ))}
       </div>
     </section>

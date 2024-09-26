@@ -7,12 +7,12 @@ import DiscountBanners from './DiscountBanners';
 const Hero = () => {
   return (
     <section className="flex justify-center min-h-full overflow-hidden bg-white">
-      <div className="w-full max-w-7xl flex flex-col md:flex-row gap-6 bg-white mt-[36px] px-3 h-auto md:h-[400px]">
+      <div className="w-full max-w-7xl flex flex-col md:flex-row gap-6 bg-white mt-[10px] px-3 h-auto md:h-[400px]">
         {/* Left Div (2/3 width) */}
         <div className="w-full md:w-4/6 bg-[#f8f8fcf3] rounded-lg p-8 relative overflow-hidden">
           {/* Egg Shape with Lumps (Right Shape) */}
           <div
-            className="absolute bottom-1/2 right-0 w-32 h-32 md:w-44 md:h-44 bg-[#ef5bfa] rounded-full "
+            className="absolute bottom-1/2 right-0 w-32 h-32 md:w-44 md:h-44 bg-[#ef5bfa]/90 rounded-full "
             style={{
               zIndex: 1,
               transform: 'translateX(50%) translateY(50%) rotate(-30deg)',
@@ -20,7 +20,7 @@ const Hero = () => {
           >
             {/* Add lumps */}
             <div
-              className="absolute w-8 h-8 md:w-12 md:h-12 bg-[#d590da] rounded-full"
+              className="absolute w-8 h-8 md:w-12 md:h-12 bg-[#d590da]/90 rounded-full"
               style={{
                 top: '20%',
                 left: '20%',
@@ -28,7 +28,7 @@ const Hero = () => {
               }}
             ></div>
             <div
-              className="absolute w-16 h-16 bg-purple-800 rounded-full md:w-24 md:h-24"
+              className="absolute w-16 h-16 rounded-full bg-purple-800/80 md:w-24 md:h-24"
               style={{
                 bottom: '35%',
                 right: '45%',
@@ -39,7 +39,7 @@ const Hero = () => {
 
           {/* Additional Shape (Middle Shape) */}
           <div
-            className="absolute top-1/4 left-1/3 w-36 h-28 md:w-48 md:h-36 bg-[#ffb6e9] rounded-full "
+            className="absolute top-1/4 left-1/3 w-36 h-28 md:w-48 md:h-36 bg-[#ffb6e9]/90 rounded-full "
             style={{
               zIndex: 1,
               transform: 'translateX(-50%) translateY(-50%) rotate(20deg)',
@@ -48,14 +48,14 @@ const Hero = () => {
 
           {/* Additional Shape (Left Bottom Shape) */}
           <div
-            className="absolute bottom-12 left-16 w-8 h-12 md:w-10 md:h-14 bg-[#ffcaef] rounded-full"
+            className="absolute bottom-12 left-16 w-8 h-12 md:w-10 md:h-14 bg-[#ffcaef]/40 rounded-full"
             style={{
               zIndex: 1,
               transform: 'translate(-50%, 50%) rotate(45deg)',
             }}
           ></div>
           <div
-            className="absolute bottom-0 left-16 w-8 h-12 md:w-10 md:h-14 bg-[#ffcaef] rounded-full "
+            className="absolute bottom-0 left-16 w-8 h-12 md:w-10 md:h-14 bg-[#ffcaef]/40 rounded-full "
             style={{
               zIndex: 1,
               transform: 'translateX(-50%) translateY(-50%) rotate(-20deg)',

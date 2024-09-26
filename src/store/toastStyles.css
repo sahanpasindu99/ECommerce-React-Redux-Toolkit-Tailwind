@@ -1,0 +1,16 @@
+.custom-toast {
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .custom-toast {
+      font-size: 0.85rem;
+      padding: 8px;
+    }
+  }
+  

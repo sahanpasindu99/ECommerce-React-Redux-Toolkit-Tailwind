@@ -8,6 +8,7 @@ import Featured from '../components/Featured';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import StatusCode from '../utils/Status';
+import FeatureIphone from '../components/FeatureIphone';
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -21,9 +22,10 @@ export const Home = () => {
     <section className="w-full px-0 py-10 mx-0">
       <Hero />
       <Featured />
+      <FeatureIphone/>
 
       {/* Heading and View All Button */}
-      <div className="flex flex-col items-start justify-between max-w-6xl px-4 mx-auto sm:flex-row sm:items-center">
+      <div className="flex flex-col items-start justify-between max-w-6xl px-4 pt-12 mx-auto sm:flex-row sm:items-center">
         <h2 className="mx-2 text-2xl font-semibold">Big Save</h2>
         <button className="mt-2 text-black hover:underline sm:mt-0">View more</button>
       </div>
