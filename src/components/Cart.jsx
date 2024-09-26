@@ -39,7 +39,7 @@ const Cart = () => {
                   {/* Product Image and Details */}
                   <div className="flex items-center col-span-6">
                     <img
-                      src={item.image}
+                      src={item.images[1]}
                       alt={item.name}
                       className="object-cover w-20 h-20 rounded-lg sm:w-24 sm:h-24"
                       draggable={false}
@@ -53,7 +53,7 @@ const Cart = () => {
 
                   {/* Price */}
                   <div className="col-span-2 text-sm font-semibold text-center sm:text-base">
-                    ${item.price.toFixed(2)}
+                    ${item.price}
                   </div>
 
                   {/* Quantity Controls */}

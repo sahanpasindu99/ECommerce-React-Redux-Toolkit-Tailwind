@@ -5,31 +5,37 @@ import { faStar, faStarHalfAlt, faFire } from '@fortawesome/free-solid-svg-icons
 import { addToCart } from '../store/cartSlice';
 import { addToWishlist } from '../store/wishlistSlice';
 import { useDispatch } from 'react-redux';
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from 'react-router-dom';
 
 const Products = ({ product }) => {
+  const navigate = useNavigate();
   let rating = product.rating;
   const filledStars = Math.floor(rating);
   const hasHalfStar = rating % 1 !== 0;
 
   const dispatch = useDispatch();
 
-  const handleAddToCart = () => {
+  const handleAddToCart = (e) => {
+    e.stopPropagation(); // Prevent triggering the viewProductDetails
     dispatch(addToCart(product));
   };
 
-  const handleAddToWishlist=()=>{
-     dispatch(addToWishlist(product));
+  const handleAddToWishlist = (e) => {
+    e.stopPropagation(); // Prevent triggering the viewProductDetails
+    dispatch(addToWishlist(product));
+  };
+
+  const viewProductDetails = () => {
+    navigate(`/product/${product.id}`);
   };
 
   return (
     <div
+      onClick={viewProductDetails}
       className={`relative w-[230px] p-4 rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl ${
         product.id === 1 ? 'bg-gradient-to-tl from-[#fade63] to-[#fcecc2e7]' : 'bg-white'
       }`}
     >
- 
       {/* Most Popular Ribbon */}
       {product.id === 1 && (
         <div className="absolute flex items-center justify-center w-64 h-10 px-2 py-1 text-sm font-semibold text-white transform -rotate-45 -translate-x-1/2 -translate-y-1/2 bg-red-500 shadow-sm top-12 left-12">
@@ -40,13 +46,13 @@ const Products = ({ product }) => {
 
       {/* Favorite Button */}
       <div className="absolute top-3 right-3">
-        <button   onClick={handleAddToWishlist} className="p-2 bg-white rounded-full shadow-md hover:bg-gray-200">
+        <button onClick={handleAddToWishlist} className="p-2 bg-white rounded-full shadow-md hover:bg-gray-200">
           <FiHeart className="text-xl" />
         </button>
       </div>
 
       {/* Product Image */}
-      <img src={product.image} alt="Product" className="w-full h-[148px] object-contain mb-4"  draggable="false"/>
+      <img src={product.images[1]} alt="Product" className="w-full h-[148px] object-contain mb-4" draggable="false" />
 
       {/* Product Info */}
       <div className="text-center">
@@ -94,7 +100,10 @@ const Products = ({ product }) => {
 
         {/* Price and Add to Cart */}
         <div className="flex items-center justify-center gap-2 mt-3">
-          <button onClick={handleAddToCart} className="w-10 h-10 p-2 text-gray-700 border border-gray-200 rounded-full shadow-md bg-gray-50 hover:bg-gray-300">
+          <button
+            onClick={handleAddToCart}
+            className="w-10 h-10 p-2 text-gray-700 border border-gray-200 rounded-full shadow-md bg-gray-50 hover:bg-gray-300"
+          >
             <FiShoppingCart className="ml-[2px] text-lg" />
           </button>
           <button className="h-10 w-20 py-2 bg-[#4a2072e5] text-white text-sm font-bold rounded-full shadow-md">
