@@ -53,7 +53,7 @@ const Featured = () => {
         {companies.map((company, index) => (
           <React.Fragment key={company.id}>
             <motion.div
-              className="flex gap-2 md:max-w-80 max-w-36"
+              className="flex gap-2 md:max-w-60 max-w-14"
               initial="hidden"
               animate="visible"
               variants={animationVariants}
