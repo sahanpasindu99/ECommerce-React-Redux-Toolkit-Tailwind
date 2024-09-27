@@ -7,29 +7,26 @@ import { useDispatch } from 'react-redux';
 import { addToCart } from '../store/cartSlice';
 
 const ProductDetails = () => {
-  const { id } = useParams(); // Get the id from the URL params
-  const productId = parseInt(id, 10); // Convert the id to a number (since your ids are numbers)
+  const { id } = useParams(); 
+  const productId = parseInt(id, 10); 
   const dispatch = useDispatch();
 
-  const handleAddToCart = () => {
-    dispatch(addToCart(product));
-  };
-
-  // Find the product by id
   const selectedProduct = product.find((p) => p.id === productId);
-
-  // If no product is found, display a fallback message
+  
   if (!selectedProduct) {
-    return <div>Product not found</div>;
+    return <div className="text-lg font-semibold text-center">Product not found</div>;
   }
 
-  const { name, images, price, rating, sold, qty,description } = selectedProduct;
-  const sizes = [7, 8, 9, 10, 11]; // Example sizes
-  const colors = ['#4B0082', '#006400', '#0B0B0B']; // Dark purple, Dark green, Space black
-  const [mainImage, setMainImage] = useState(images[0]); // Set the first image as the main image
-  const [selectedIndex, setSelectedIndex] = useState(0); // Track the selected image index
+  const handleAddToCart = () => {
+    dispatch(addToCart(selectedProduct));
+  };
 
-  // Handle image selection
+  const { name, images, price, rating, sold, qty, description } = selectedProduct;
+  const sizes = [7, 8, 9, 10, 11]; 
+  const colors = ['#4B0082', '#006400', '#0B0B0B'];
+  const [mainImage, setMainImage] = useState(images[0]); 
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
   const handleImageClick = (index) => {
     setMainImage(images[index]);
     setSelectedIndex(index);
@@ -40,10 +37,14 @@ const ProductDetails = () => {
       {/* Left Div: Back Button, Title, Description */}
       <div className="flex flex-col w-full px-2 mb-8 md:mb-0 md:flex-row md:px-0">
         <div className="flex flex-col flex-1 ml-4 space-y-8">
-          <button  className="flex justify-start font-semibold text-gray-500 hover:text-black"><Link to='/'>{'<'} Back</Link></button>
-          <h1 className="!mt-8 text-black/80 text-3xl font-bold">{name}</h1>
-          <p className="!mt-4 font-regular text-gray-500">
-{description}          </p>
+          <button className="flex justify-start font-semibold text-gray-500 transition-colors hover:text-gray-800">
+            <Link to="/" className="flex items-center space-x-2">
+              <span className="text-lg">←</span>
+              <span>Back</span>
+            </Link>
+          </button>
+          <h1 className="!mt-8 text-gray-900 text-4xl font-extrabold tracking-wide shadow-sm">{name}</h1>
+          <p className="!mt-4 text-md text-gray-600 leading-relaxed">{description}</p>
 
           {/* Image Thumbnails */}
           <div className="flex mt-4 space-x-4">
@@ -52,7 +53,9 @@ const ProductDetails = () => {
                 key={index}
                 src={img}
                 alt={`Thumbnail ${index + 1}`}
-                className={`object-cover w-20 h-20 border cursor-pointer rounded-[5px] ${selectedIndex === index ? 'border-2 border-blue-700' : ''}`}
+                className={`object-cover w-20 h-20 border cursor-pointer rounded-[8px] transition-all duration-200 hover:shadow-md ${
+                  selectedIndex === index ? 'border-2 border-blue-500' : 'border-gray-300'
+                }`}
                 onClick={() => handleImageClick(index)}
               />
             ))}
@@ -70,41 +73,38 @@ const ProductDetails = () => {
 
         {/* Right Div: Sizes, Reviews, Price, Colors */}
         <div className="flex flex-col flex-1 ml-4 md:items-center">
-          <div className="relative space-y-4 md:top-6">
-            {/* <h2 className="text-xl font-semibold">Size</h2>
-            <div className="flex space-x-2">
-              {sizes.map((size) => (
-                <div key={size} className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full">
-                  {size}
-                </div>
-              ))}
-            </div> */}
-
-            <div className="flex items-center  space-x-14 justify-between !mt-6">
-              <h2 className="font-semibold text-md">Sold</h2>
-              <p className="text-gray-600 pt-3/4">{rating}/5 ({sold} sold)</p>
+          <div className="relative space-y-6 md:top-6">
+            <div className="flex items-center space-x-14 justify-between !mt-6">
+              <h2 className="text-lg font-semibold">Sold</h2>
+              <p className="text-gray-600">{rating}/5 ({sold} sold)</p>
             </div>
 
             <div className="flex items-center space-x-14 justify-between !mt-4">
-              <h2 className="font-semibold text-md">Price</h2>
-              <p className="text-xl font-bold">${price}</p>
+              <h2 className="text-lg font-semibold">Price</h2>
+              <p className="text-2xl font-bold text-gray-900">${price}</p>
             </div>
 
             <div>
-              <h2 className="text-lg font-semibold ">Available Colors</h2>
+              <h2 className="text-lg font-semibold">Available Colors</h2>
               <div className="flex mt-2 space-x-3">
                 {colors.map((color) => (
                   <div
                     key={color}
                     style={{ backgroundColor: color }}
-                    className="w-8 h-8 border rounded-full hover:border-4 hover:!border-gray-800"
+                    className="w-8 h-8 border rounded-full hover:border-4 hover:!border-gray-900 transition-all"
                   ></div>
                 ))}
               </div>
             </div>
-            <div className="flex items-center justify-between !mt-10 ">
-<button onClick={handleAddToCart} className='flex items-center justify-center w-full h-10 font-semibold text-center text-white bg-black rounded-md hover:bg-gray-950'>Add to cart <FiShoppingCart className='ml-2'/></button>     
-       </div>
+
+            <div className="flex items-center justify-between !mt-10">
+              <button
+                onClick={handleAddToCart}
+                className="flex items-center justify-center w-full h-12 font-semibold text-center text-white transition-all bg-black rounded-lg hover:bg-gray-900"
+              >
+                Add to cart <FiShoppingCart className="ml-2" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
