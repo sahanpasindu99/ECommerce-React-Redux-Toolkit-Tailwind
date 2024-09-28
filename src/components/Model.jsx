@@ -54,20 +54,20 @@ const Model = () => {
 
   return (
     <section className="relative overflow-hidden common-padding">
-      <div className="screen-max-width">
-        <h1 id="heading" className="section-heading">
+      <div className="screen-max-width !py-8 md:!py-0">
+        <h1 id="heading" className="section-heading ">
           Take a closer look.
         </h1>
-        <p className="pt-4 text-lg font-normal text-gray-300 animate-slide-up">
-  Touch to rotate the phone <span className="text-white/70">🖐️</span>
+        <p className="font-normal text-gray-300 text-md md:text-lg md:pt-4 animate-slide-up">
+  Touch to rotate the phone 360<span className="ml-1 text-white/70">🖐️</span>
 </p>
 
 
         <div className="flex flex-col items-center mt-5 overflow-hidden ">
-        <div className="absolute transform -translate-x-1/2 -translate-y-1/2 blur-xs  border-2 rounded-full w-[20rem] h-[30rem] border-gray-100/5 top-1/2 left-1/2 -z-30" />
-<div className="absolute transform -translate-x-1/2 -translate-y-1/2 border-2 blur-xs  rounded-full w-[35em] h-[45rem] border-gray-100/5 top-1/2 left-1/2 -z-40" />
-<div className="absolute transform -translate-x-1/2 -translate-y-1/2 border-2 blur-xs  rounded-full w-[50rem] h-[60rem] border-gray-100/5 top-1/2 left-1/2 -z-50" />
-<div className="absolute transform -translate-x-1/2 -translate-y-1/2 border-2 blur-xs  rounded-full w-[65rem] h-[75rem] border-gray-100/5 top-1/2 left-1/2 -z-50" />
+        <div className="absolute transform -translate-x-1/2 -translate-y-1/2 blur-xs  border-2 rounded-full w-[15rem] h-[25rem] md:w-[20rem] md:h-[30rem] border-gray-100/5 top-1/2 left-1/2 -z-30" />
+<div className="absolute transform -translate-x-1/2 -translate-y-1/2 border-2 blur-xs  rounded-full w-[25rem] h-[35rem] md:w-[35em] md:h-[45rem] border-gray-100/5 top-1/2 left-1/2 -z-40" />
+<div className="absolute transform -translate-x-1/2 -translate-y-1/2 border-2 blur-xs  rounded-full w-[35rem] h-[45rem] md:w-[50rem] md:h-[60rem] border-gray-100/5 top-1/2 left-1/2 -z-50" />
+<div className="absolute transform -translate-x-1/2 -translate-y-1/2 border-2 blur-xs  rounded-full w-[45rem] h-[55rem] md:w-[65rem] md:h-[75rem] border-gray-100/5 top-1/2 left-1/2 -z-50" />
 
         {/* <div className="absolute w-64 h-64 transform -translate-x-1/2 -translate-y-1/2 rounded-full shadow-inner blur-xl bg-gradient-to-br from-purple-200 to-pink-200 shadow-pink-500/5 md:w-96 md:h-96 top-1/2 left-1/2 -z-20" />
 
