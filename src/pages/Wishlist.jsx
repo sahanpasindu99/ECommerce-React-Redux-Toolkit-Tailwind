@@ -24,7 +24,7 @@ const Wishlist = () => {
     
       <div className="w-full max-w-6xl p-4 mx-auto mt-8">
         <div className="flex items-center justify-between mb-4">
-          <h1 className="text-2xl font-semibold">My Wishlist ({wishlist.length})</h1>
+          <h1 className="text-2xl font-semibold text-gray-800">My Wishlist ({wishlist.length})</h1>
           {wishlist.length > 0 &&
               <div className="flex items-center">
               <input
@@ -33,7 +33,7 @@ const Wishlist = () => {
                 checked={selectAll}
                 onChange={(e) => setSelectAll(e.target.checked)}
               />
-              <span>Select All</span>
+              <span className='text-gray-700'>Select All</span>
               <button
                 className="w-40 h-auto px-4 py-2 ml-4 text-white bg-red-500 rounded-lg"
                 onClick={handleBulkDelete}
@@ -48,7 +48,7 @@ const Wishlist = () => {
         {wishlist.length > 0 ? (
           <div>
             {wishlist.map((item) => (
-              <div key={item.id} className="flex items-center justify-between p-4 border-b">
+              <div key={item.id} className="flex items-center justify-between p-4 border-b border-gray-50">
                 <div className="flex items-center">
                   <input
                     type="checkbox"
@@ -58,8 +58,8 @@ const Wishlist = () => {
                   <img src={item?.images[1]} alt={item.name} className="w-20 h-20 mx-4" draggable={false}
                   />
                   <div>
-                    <h2 className="text-lg font-medium">{item.name}</h2>
-                    <p>$ {item.price}</p>
+                    <h2 className="text-lg font-medium text-gray-700">{item.name}</h2>
+                    <p className='text-gray-600'>$ {item.price}</p>
                   </div>
                 </div>
                 <button

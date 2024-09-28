@@ -9,6 +9,7 @@ import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import StatusCode from '../utils/Status';
 import FeatureIphone from '../components/FeatureIphone';
+import Model from '../components/Model';
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ export const Home = () => {
       <Hero />
       <Featured />
       <FeatureIphone/>
+      <Model/>
 
       {/* Heading and View All Button */}
       <div className="flex flex-col items-start justify-between max-w-6xl px-4 pt-12 mx-auto sm:flex-row sm:items-center">

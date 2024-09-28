@@ -1,7 +1,7 @@
 import React from 'react';
 import { FiHeart, FiShoppingCart } from 'react-icons/fi';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faStarHalfAlt, faFire } from '@fortawesome/free-solid-svg-icons'; // Import FontAwesome icons
+import { faStar, faStarHalfAlt, faFire } from '@fortawesome/free-solid-svg-icons';
 import { addToCart } from '../store/cartSlice';
 import { addToWishlist } from '../store/wishlistSlice';
 import { useDispatch } from 'react-redux';
@@ -9,11 +9,12 @@ import { useNavigate } from 'react-router-dom';
 
 const Products = ({ product }) => {
   const navigate = useNavigate();
-  let rating = product.rating;
+  const dispatch = useDispatch();
+  
+  // Calculate rating details
+  const rating = product.rating;
   const filledStars = Math.floor(rating);
   const hasHalfStar = rating % 1 !== 0;
-
-  const dispatch = useDispatch();
 
   const handleAddToCart = (e) => {
     e.stopPropagation(); // Prevent triggering the viewProductDetails
@@ -47,7 +48,7 @@ const Products = ({ product }) => {
       {/* Favorite Button */}
       <div className="absolute top-3 right-3">
         <button onClick={handleAddToWishlist} className="p-2 bg-white rounded-full shadow-md hover:bg-gray-200">
-          <FiHeart className="text-xl" />
+          <FiHeart className="text-xl text-gray-100" />
         </button>
       </div>
 
@@ -57,7 +58,7 @@ const Products = ({ product }) => {
       {/* Product Info */}
       <div className="text-center">
         <p className="text-xs text-gray-400">{product.type}</p>
-        <h2 className="text-lg font-semibold">{product.name}</h2>
+        <h2 className="text-lg font-semibold text-black">{product.name}</h2>
 
         {/* Rating and Sold Count */}
         <div className="flex flex-col items-center mt-2">
@@ -92,7 +93,6 @@ const Products = ({ product }) => {
                 );
               }
             })}
-
             <p className="text-gray-600 text-sm ml-[3px]">{product.rating}</p>
             <p className="ml-3 text-sm text-gray-600">{product.sold} sold</p>
           </div>

@@ -74,7 +74,7 @@ const FeatureIphone = () => {
       <div id="cta" className="flex flex-col items-center translate-y-20 opacity-0">
         <a
           href="#"
-          className="text-center pt-1 w-[80px] h-[36px] bg-blue-600 btn rounded-full text-white/90"
+          className="text-center  w-[80px] h-[36px] bg-blue-600 btn rounded-full text-white/90"
         >
           Buy
         </a>

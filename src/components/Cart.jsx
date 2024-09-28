@@ -14,7 +14,7 @@ const Cart = () => {
   return (
     <div className="grid max-w-6xl grid-cols-1 gap-6 py-6 mx-auto lg:grid-cols-3">
       <div className="col-span-2 px-4 rounded-lg ">
-        <h2 className="my-4 text-xl font-semibold sm:text-2xl">Shopping Bag</h2>
+        <h2 className="my-4 text-xl font-semibold text-gray-800 sm:text-2xl">Shopping Bag</h2>
         <p className="mb-4 text-sm text-gray-600 sm:text-base">{cartItems.length} items in your bag.</p>
 
         {cartItems.length === 0 ? (
@@ -22,11 +22,11 @@ const Cart = () => {
         ) : (
           <>
             {/* Table Heading */}
-            <div className="grid grid-cols-12 p-4 mb-4 text-sm font-semibold text-gray-600 sm:text-base">
-              <div className="col-span-6">Product</div>
-              <div className="col-span-2 text-center">Price</div>
-              <div className="col-span-2 text-center">Quantity</div>
-              <div className="col-span-2 text-right">Total</div>
+            <div className="grid grid-cols-12 p-4 mb-4 text-sm font-semibold !text-gray-600 sm:text-base">
+              <div className="col-span-6 text-gray-700">Product</div>
+              <div className="col-span-2 text-center text-gray-700">Price</div>
+              <div className="col-span-2 text-center text-gray-700">Quantity</div>
+              <div className="col-span-2 text-right text-gray-700">Total</div>
             </div>
 
             {/* Cart Items */}
@@ -34,7 +34,7 @@ const Cart = () => {
               {cartItems.map((item) => (
                 <div
                   key={item.id}
-                  className="grid items-center grid-cols-12 p-4 bg-gray-100 rounded-lg shadow"
+                  className="grid items-center grid-cols-12 p-4 rounded-lg shadow !bg-gray-100/10"
                 >
                   {/* Product Image and Details */}
                   <div className="flex items-center col-span-6">
@@ -45,14 +45,14 @@ const Cart = () => {
                       draggable={false}
                     />
                     <div className="ml-4">
-                      <h4 className="text-sm font-semibold sm:text-base lg:text-lg">{item.name}</h4>
+                      <h4 className="text-sm font-semibold text-gray-600 sm:text-base lg:text-lg">{item.name}</h4>
                       <p className="text-xs text-gray-600 sm:text-sm">Color: {item.color}</p>
                       <p className="text-xs text-gray-600 sm:text-sm">Size: {item.size}</p>
                     </div>
                   </div>
 
                   {/* Price */}
-                  <div className="col-span-2 text-sm font-semibold text-center sm:text-base">
+                  <div className="col-span-2 text-sm font-semibold text-center text-gray-700 sm:text-base">
                     ${item.price}
                   </div>
 
@@ -64,7 +64,7 @@ const Cart = () => {
                     >
                       -
                     </button>
-                    <span className="text-sm font-semibold sm:text-lg ">{item.cartQuantity}</span>
+                    <span className="text-sm font-semibold text-gray-700 sm:text-lg">{item.cartQuantity}</span>
                     <button
                       onClick={() => dispatch(addToCart(item))}
                       className="flex items-center justify-center w-6 h-6 bg-gray-300 rounded-full hover:bg-gray-400 sm:w-8 sm:h-8"
@@ -98,7 +98,7 @@ const Cart = () => {
       <div className="p-6 space-y-6 bg-white rounded-lg">
         {/* Calculated Shipping */}
         <div>
-          <h4 className="mb-4 text-base font-semibold sm:text-lg">Calculated Shipping</h4>
+          <h4 className="mb-4 text-base font-semibold text-gray-700 sm:text-lg">Calculated Shipping</h4>
           <div className="space-y-4">
             <select className="w-full px-2 py-1 text-sm bg-gray-200 rounded-lg sm:px-4 sm:py-2">
               <option>Country</option>
