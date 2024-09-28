@@ -43,7 +43,7 @@ const ProductDetails = () => {
               <span>Back</span>
             </Link>
           </button>
-          <h1 className="!mt-8 text-gray-900 text-4xl font-extrabold tracking-wide shadow-sm">{name}</h1>
+          <h1 className="!mt-8 text-gray-900 text-4xl font-extrabold tracking-wide">{name}</h1>
           <p className="!mt-4 text-md text-gray-600 leading-relaxed">{description}</p>
 
           {/* Image Thumbnails */}
