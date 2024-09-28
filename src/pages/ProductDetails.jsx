@@ -75,17 +75,17 @@ const ProductDetails = () => {
         <div className="flex flex-col flex-1 ml-4 md:items-center">
           <div className="relative space-y-6 md:top-6">
             <div className="flex items-center space-x-14 justify-between !mt-6">
-              <h2 className="text-lg font-semibold">Sold</h2>
+              <h2 className="text-lg font-semibold text-gray-900">Sold</h2>
               <p className="text-gray-600">{rating}/5 ({sold} sold)</p>
             </div>
 
             <div className="flex items-center space-x-14 justify-between !mt-4">
-              <h2 className="text-lg font-semibold">Price</h2>
+              <h2 className="text-lg font-semibold text-gray-900">Price</h2>
               <p className="text-2xl font-bold text-gray-900">${price}</p>
             </div>
 
             <div>
-              <h2 className="text-lg font-semibold">Available Colors</h2>
+              <h2 className="text-lg font-semibold text-gray-900">Available Colors</h2>
               <div className="flex mt-2 space-x-3">
                 {colors.map((color) => (
                   <div
