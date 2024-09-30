@@ -53,7 +53,7 @@ const Products = ({ product }) => {
       </div>
 
       {/* Product Image */}
-      <img src={product.images[1]} alt="Product" className="w-full h-[148px] object-contain mb-4" draggable="false" />
+      <img src={product.images[1]} alt="Product" className="w-full h-[148px] object-contain mb-4" loading='lazy'  draggable="false" />
 
       {/* Product Info */}
       <div className="text-center">
