@@ -58,7 +58,7 @@ const Featured = () => {
               animate="visible"
               variants={animationVariants}
               transition={{
-                duration: 1,
+                duration: 1.5,
                 delay: index * 0.2, // Stagger the animation for each company
               }}
             >
